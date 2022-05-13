@@ -19,25 +19,14 @@ import {
 function AddToCartMarkup() {
   const {selectedVariant} = useProduct();
   const isOutOfStock = !selectedVariant.availableForSale;
-
   return (
     <div className="space-y-2 mb-8">
       <AddToCartButton
         className={BUTTON_PRIMARY_CLASSES}
         disabled={isOutOfStock}
       >
-        {isOutOfStock ? 'Out of stock' : 'Add to bag'}
+        {isOutOfStock ? 'Out of stock' : 'Add to cart'}
       </AddToCartButton>
-      {isOutOfStock ? (
-        <p className="text-black text-center">Available in 2-3 weeks</p>
-      ) : (
-        <BuyNowButton
-          variantId={selectedVariant.id}
-          className={BUTTON_SECONDARY_CLASSES}
-        >
-          Buy it now
-        </BuyNowButton>
-      )}
     </div>
   );
 }
@@ -133,7 +122,7 @@ export default function ProductDetails({product}) {
           <div className="md:hidden mt-5 mb-8">
             <ProductTitle
               as="h1"
-              className="text-4xl font-bold text-black mb-4"
+              className="text-4xl md:text-5xl font-black text-purple-500 mb-4"
             />
             {product.vendor && (
               <div className="text-sm font-medium mb-2 text-gray-900">
@@ -152,7 +141,7 @@ export default function ProductDetails({product}) {
             <div className="hidden md:block">
               <ProductTitle
                 as="h1"
-                className="text-5xl font-bold text-black mb-4"
+                className="text-4xl md:text-5xl font-black text-purple-500 mb-4"
               />
               {product.vendor && (
                 <div className="text-sm font-medium mb-2 text-gray-900">

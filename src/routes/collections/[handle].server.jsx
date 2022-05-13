@@ -12,6 +12,7 @@ export default function Collection({
   params,
 }) {
   const {languageCode} = useShop();
+  console.log('front');
 
   const {handle} = params;
   const {data} = useShopQuery({

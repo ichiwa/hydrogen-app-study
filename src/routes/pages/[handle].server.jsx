@@ -19,6 +19,7 @@ export default function Page({params}) {
 
   const page = data.pageByHandle;
 
+  console.log('aaaaaaaaaaaaa');
   return (
     <Layout>
       <Seo type="page" data={page} />

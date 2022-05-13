@@ -22,6 +22,8 @@ export default function Product({country = {isoCode: 'US'}}) {
     preload: true,
   });
 
+  console.log('aaaaaaaaaaaaaeeeeeeee');
+
   if (!product) {
     return <NotFound />;
   }
